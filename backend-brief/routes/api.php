@@ -40,6 +40,7 @@ Route::post('Brief', [BriefController::class, 'store']);
 Route::get('Brief', [BriefController::class, 'index']);
 Route::get('Brief/{id}', [BriefController::class, 'getBreif']);
 Route::put('Brief/{id}', [BriefController::class, 'update']);
+Route::delete('Brief/{id}', [BriefController::class, 'destroy']);
 
 
 

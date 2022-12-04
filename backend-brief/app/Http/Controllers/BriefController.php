@@ -40,4 +40,10 @@ class BriefController extends Controller
         $update_brief->save();
         return response()->json($update_brief);
     }
+
+    public function destroy($id)
+    {
+        $delete_brief = brief::destroy($id);
+        return response()->json($delete_brief);
+    }
 }

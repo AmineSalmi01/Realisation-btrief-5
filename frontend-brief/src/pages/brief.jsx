@@ -1,9 +1,9 @@
 import React from 'react'
 
-const brief = () => {
+const  Brief = () => {
   return (
-    <div>brief</div>
+    <div> Breif </div>
   )
 }
 
-export default brief
+export default  Brief

@@ -1,8 +1,38 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const  Brief = () => {
+  const [briefs, setBriefs] = useState([]);
+
+  useEffect(() => {
+    const getBrief = async () => {
+      const apiBrief = await axios.get('http://127.0.0.1:8000/api/Brief');
+      setBriefs(apiBrief.data);
+    }
+    getBrief();
+  }, [])
   return (
-    <div> Breif </div>
+    <div className='flex cursor-pointer rounded-3xl  px-4 sm:flex-row sm:space-x-6 sm:space-y-0'> 
+         {briefs.map((brief) => {
+          return (
+
+              <div key={brief.id_brief} 
+              className='w-full max-w-sm overflow-hidden 
+              rounded-lg bg-white duration-300 hover:scale-105 hover:shadow-xl'>
+                <img src='' className='mx-auto mt-8 h-16 w-20' alt='' />
+
+                <h1 className='mt-2 text-2xl font-bold'>{brief.name_brief}</h1>
+                <h3 className='my-4 text-center text-sm text-gray-500'> Date Start : {brief.start_brief} </h3>
+                <h3 className='my-4 text-center text-sm text-gray-500'> Date End : {brief.end_brief} </h3>
+                <div className=' px-4 py-4 text-center flex space-x-4'>
+                  <button className='inline-block text-white rounded-3xl bg-black px-6 h-10 duration-75'>CONSULTER</button>
+                  <button className='inline-block border border-black rounded-3xl bg-white px-6 py-2 h-10 font-semibold shadow-md duration-75 '>CONSULTER</button>
+                </div>
+              </div>
+
+          ); 
+         })}
+    </div>
   )
 }
 

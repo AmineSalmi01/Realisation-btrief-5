@@ -3,6 +3,7 @@
 use App\Http\Controllers\PromotionController;
 use App\Http\Controllers\ApprenantsController;
 use App\Http\Controllers\BriefController;
+use App\Http\Controllers\TaskController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -41,6 +42,15 @@ Route::get('Brief', [BriefController::class, 'index']);
 Route::get('Brief/{id}', [BriefController::class, 'getBreif']);
 Route::put('Brief/{id}', [BriefController::class, 'update']);
 Route::delete('Brief/{id}', [BriefController::class, 'destroy']);
+
+//Tasks
+
+Route::post('Tasks', [TaskController::class, 'store']);
+Route::get('Tasks', [TaskController::class, 'index']);
+Route::get('Tasks/{id}', [TaskController::class, 'getTask']);
+Route::put('Tasks/{id}', [TaskController::class, 'update']);
+Route::delete('Tasks/{id}', [TaskController::class, 'destroy']);
+
 
 
 

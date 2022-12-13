@@ -14,4 +14,8 @@ class brief extends Model
     protected $fillable = [
         'name_brief', 'start_brief', 'end_brief'
     ];
+
+    public function task(){
+        return $this->hasMany(Task::class);
+    }
 }

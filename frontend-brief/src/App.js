@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react'
+import React  from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import SideBare from './components/SideBare';
 import NavBar from './components/NavBar';
 import Home from './pages/Home';
 import './App.css'; 
 import Promotion from './pages/Promotion';
-import Aprrenants from './pages/Aprrenants'
-import Brief from './pages/Brief';
+import Aprrenants from './pages/aprrenants'
+import Brief from './pages/brief';
 
 const App = () => {
     const activeMenu = true;

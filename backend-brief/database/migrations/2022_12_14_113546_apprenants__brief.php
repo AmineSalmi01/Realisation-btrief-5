@@ -13,13 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('brief', function (Blueprint $table) {
+        Schema::create('apprenant_brief', function (Blueprint $table) {
             $table->id();
-            $table->string('name_brief');
-            $table->string('descrip');
-            $table->date('start_brief');
-            $table->date('end_brief');
-            $table->timestamps();
+            $table->unsignedBigInteger('brief_id');
+            $table->unsignedBigInteger('apprenant_id');
+            $table->foreign('brief_id')->references('id')->on('brief')
+            ->onDelete('cascade');
+            $table->foreign('apprenant_id')->references('id')->on('apprenant')
+            ->onDelete('cascade');
+            
         });
     }
 
@@ -30,8 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('brief', function (Blueprint $table) {
-            //
-        });
+        //
     }
 };

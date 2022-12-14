@@ -14,15 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('apprenant', function (Blueprint $table) {
-
-            $table->increments('id_appr');
+            $table->id();
             $table->string('nom');
             $table->string('prenom');
             $table->string('email');
             $table->string('cin');
             $table->string('naissance');
-            $table->UnsignedInteger('id_promotion');
-            $table->foreign('id_promotion')->references('id')->on('Promotion')
+            $table->unsignedBigInteger('promotion_id');
+            $table->foreign('promotion_id')->references('id')->on('promotion')
             ->onDelete('cascade');
             $table->timestamps();
 

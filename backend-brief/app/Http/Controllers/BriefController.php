@@ -19,6 +19,7 @@ class BriefController extends Controller
     {
         $brief = new brief();
         $brief->name_brief = $request->name_brief;
+        $brief->descrip = $request->descrip;
         $brief->start_brief = $request->start_brief;
         $brief->end_brief = $request->end_brief;
         $brief->save();
@@ -35,6 +36,7 @@ class BriefController extends Controller
     {
         $update_brief = brief::find($id);
         $update_brief->name_brief = $request->name_brief;
+        $update_brief->descrip = $request->descrip;
         $update_brief->start_brief = $request->start_brief;
         $update_brief->end_brief = $request->end_brief;
         $update_brief->save();

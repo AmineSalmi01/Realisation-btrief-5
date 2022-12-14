@@ -16,7 +16,7 @@ const SideBare = () => {
 
   return (
       <div>
-          <section className='flex gap-6'>
+          <section className='flex gap-2'>
               <div className={`bg-[#FFFFFF] min-h-screen ${open ? 'w-60': 'w-16'} duration-500 px-3`}>
                   <div className='py-3 flex justify-end'>  
                       <HiMenuAlt3 size={26} className="cursor-pointer hover:text-[#FF7A00] duration-500" onClick={() => setOpen(!open)}/>

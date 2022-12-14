@@ -14,13 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tasks', function (Blueprint $table) {
-            $table->increments('id_task');
+            $table->id();
             $table->string('name_task');
             $table->date('start_task');
             $table->date('end_task');
             $table->Integer('état');
-            $table->UnsignedInteger('id_brief');
-            $table->foreign('id_brief')->references('id_brief')->on('brief')
+            $table->unsignedBigInteger('brief_id');
+            $table->foreign('brief_id')->references('id')->on('brief')
             ->onDelete('cascade');
             $table->timestamps();
         });

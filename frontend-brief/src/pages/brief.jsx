@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import img_brief from '../data-images/images.svg';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const  Brief = () => {
   const [briefs, setBriefs] = useState([]);
@@ -18,8 +18,8 @@ const  Brief = () => {
           {briefs.map((brief) => {
             return (
 
-              <Link to={'/Détail_Brief/' + brief.id}>
-                <div key={brief.id_brief} 
+              <Link key={brief.id} to={'/Détail_Brief/' + brief.id}>
+                <div
                 className='w-80 display max-w-sm overflow-hidden 
                 rounded-3xl bg-white duration-300 hover:scale-105 hover:shadow-xl'>
                   <img src={ img_brief } className='w-full'/>
@@ -28,7 +28,11 @@ const  Brief = () => {
                   <h3 className='text-justify text-gray-500 text-xs mx-6'> {brief.descrip} </h3>
                   <div className=' mx-8 px-4 py-4 text-center flex space-x-4'>
                     <button className='inline-block border border-black text-white rounded-3xl bg-black px-5 h-9 duration-75 hover:bg-white hover:text-black'>plus detail </button>
-                    <button className='inline-block border border-black text-white rounded-3xl bg-black px-5 h-9 shadow-md duration-75 hover:bg-white hover:text-black  '>TACHES</button>
+                    
+                    <Link to={'/TachesBrief/' + brief.id}>
+                        <button className='inline-block border border-black text-white rounded-3xl bg-black px-5 h-9 shadow-md duration-75 hover:bg-white hover:text-black  '>TACHES</button>
+                    </Link>
+                    
                   </div>
                 </div>
               </Link>

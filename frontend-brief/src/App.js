@@ -8,6 +8,7 @@ import Promotion from './pages/Promotion';
 import Aprrenants from './pages/Aprrenants'
 import Brief from './pages/brief';
 import Detail_Brief from './pages/Détail_Brief';
+import TachesBrief from './pages/TachesBrief';
 
 const App = () => {
     const activeMenu = true;
@@ -30,6 +31,7 @@ const App = () => {
                             <Route path='/Aprrenants' element={<Aprrenants />}/>
                             <Route path='/Brief' element={<Brief />}/>
                             <Route path='/Détail_Brief/:id' element={<Detail_Brief />}/>
+                            <Route path='/TachesBrief/:id' element= {<TachesBrief />}/>
                         </Routes>
                     
                 </div>

@@ -7,7 +7,7 @@ import './App.css';
 import Promotion from './pages/Promotion';
 import Aprrenants from './pages/Aprrenants'
 import Brief from './pages/brief';
-import Consulter from './pages/Consulter';
+import Detail_Brief from './pages/Détail_Brief';
 
 const App = () => {
     const activeMenu = true;
@@ -29,7 +29,7 @@ const App = () => {
                             <Route path='/Promotion' element={<Promotion />}/>
                             <Route path='/Aprrenants' element={<Aprrenants />}/>
                             <Route path='/Brief' element={<Brief />}/>
-                            <Route path='/Consulter' element={<Consulter />}/>
+                            <Route path='/Détail_Brief/:id' element={<Detail_Brief />}/>
                         </Routes>
                     
                 </div>

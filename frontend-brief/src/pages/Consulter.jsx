@@ -15,7 +15,7 @@ const Consulter = () => {
     (briefs.map((brief)=>{
         return (
             <div>
-                <h1>{ brief.name_brief}</h1>
+              
             </div>
         )
     }))

@@ -4,21 +4,19 @@ import { useParams } from 'react-router-dom';
 
 const Detail_Brief = () => {
     const param = useParams();
-    const [briefs, setBriefs] = useState([]);
+    const [briefs, setBriefs] = useState({task:[]});
 
     useEffect(() => {
       const getBrief = async () => {
         const apiBrief = await axios.get('http://127.0.0.1:8000/api/Brief/'+ param.id);
-        setBriefs(apiBrief.data);
+        setBriefs((old)=>{return {...old, ...apiBrief.data}});
       }
       getBrief();
     }, [])
   return (
     <div>
                 <div>
-                    <h1>
-                        {briefs.name_brief}
-                    </h1>
+                    <h1> {briefs.name_brief} Tash : {briefs.task.length} </h1>
                     <p>
                         {briefs.descrip}
                     </p>

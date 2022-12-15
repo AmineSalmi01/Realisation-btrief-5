@@ -12,4 +12,11 @@ class Task extends Model
     protected $table = 'tasks';
     protected $primaryKey = 'id_task';
 
+
+
+    public function brief()
+    {
+        return $this->belongsTo(brief::class);
+    }
+
 }

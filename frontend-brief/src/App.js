@@ -5,8 +5,9 @@ import NavBar from './components/NavBar';
 import Home from './pages/Home';
 import './App.css'; 
 import Promotion from './pages/Promotion';
-import Aprrenants from './pages/aprrenants'
+import Aprrenants from './pages/Aprrenants'
 import Brief from './pages/brief';
+import Consulter from './pages/Consulter';
 
 const App = () => {
     const activeMenu = true;
@@ -28,6 +29,7 @@ const App = () => {
                             <Route path='/Promotion' element={<Promotion />}/>
                             <Route path='/Aprrenants' element={<Aprrenants />}/>
                             <Route path='/Brief' element={<Brief />}/>
+                            <Route path='/Consulter' element={<Consulter />}/>
                         </Routes>
                     
                 </div>

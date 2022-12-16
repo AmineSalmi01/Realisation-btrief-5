@@ -7,10 +7,9 @@ use App\Models\Task;
 use App\Models\Brief;
 class TaskController extends Controller
 {
-    public function index($id)
+    public function index()
     {
-        $data = Brief::find($id);
-        $data->task;
+        $data = Task::all();
         return response()->json($data);
     }
 

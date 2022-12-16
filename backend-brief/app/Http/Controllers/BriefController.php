@@ -29,7 +29,7 @@ class BriefController extends Controller
     public function getBreif($id)
     {
         $data = brief::find($id);
-        // $data->task;
+        $data->task;
         return response()->json($data);
     }
 

@@ -52,6 +52,7 @@ Route::put('Tasks/{id}', [TaskController::class, 'update']);
 Route::delete('Tasks/{id}', [TaskController::class, 'destroy']);
 
 
+Route::get('Brief/{id}/Tasks', [TaskController::class, 'index']);
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

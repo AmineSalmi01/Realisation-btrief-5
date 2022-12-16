@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Task;
+use App\Models\Brief;
 class TaskController extends Controller
 {
-    public function index()
+    public function index($id)
     {
-        $data = Task::all();
+        $data = Brief::find($id);
+        $data->task;
         return response()->json($data);
     }
 

@@ -32,6 +32,7 @@ const App = () => {
                             <Route path='/Brief' element={<Brief />}/>
                             <Route path='/Détail_Brief/:id' element={<Detail_Brief />}/>
                             <Route path='/TachesBrief/:id' element= {<TachesBrief />}/>
+                            <Route path='/Brief/:id/Tasks' element= {<TachesBrief />}/>
                         </Routes>
                     
                 </div>

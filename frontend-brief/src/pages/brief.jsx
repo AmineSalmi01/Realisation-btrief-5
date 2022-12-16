@@ -29,7 +29,7 @@ const  Brief = () => {
                   <div className=' mx-8 px-4 py-4 text-center flex space-x-4'>
                     <button className='inline-block border border-black text-white rounded-3xl bg-black px-5 h-9 duration-75 hover:bg-white hover:text-black'>plus detail </button>
                     
-                    <Link to={'/TachesBrief/' + brief.id}>
+                    <Link to={`./${brief.id}/Tasks`}>
                         <button className='inline-block border border-black text-white rounded-3xl bg-black px-5 h-9 shadow-md duration-75 hover:bg-white hover:text-black  '>TACHES</button>
                     </Link>
                     

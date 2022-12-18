@@ -10,5 +10,18 @@ class Apprenant extends Model
     use HasFactory;
 
     protected $table = "apprenant";
-    protected $primaryKey = "id_appr";
+
+
+    public function brief(): BelongsToMany
+    {
+        return $this->belongsToMany(brief::class, 'apprenant_brief', 'brief_id', 'apprenant_id');
+
+    }
+
+    public function tasks()
+    {
+        return $this->belongsToMany(Task::class, 'apprenants_tasks', 'task_id', 'apprenant_id')->withPivot('étatTask');
+
+    }
+
 }

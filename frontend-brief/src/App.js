@@ -9,9 +9,10 @@ import Aprrenants from './pages/Aprrenants'
 import Brief from './pages/brief';
 import Detail_Brief from './pages/Détail_Brief';
 import TachesBrief from './pages/TachesBrief';
+import Consulter from './pages/Consulter';
 
 const App = () => {
-    const activeMenu = true;
+
 
   return (
     <div>
@@ -32,6 +33,7 @@ const App = () => {
                             <Route path='/Brief' element={<Brief />}/>
                             <Route path='/Détail_Brief/:id' element={<Detail_Brief />}/>
                             <Route path='/Tasks/:id' element= {<TachesBrief />}/>
+                            <Route path="/Consulter/:id" element={<Consulter />} />
                             {/* <Route path='/Brief/:id/Tasks' element= {<TachesBrief />}/> */}
                         </Routes>
                     

@@ -10,7 +10,6 @@ class Task extends Model
     use HasFactory;
 
     protected $table = 'tasks';
-    protected $primaryKey = 'id_task';
 
 
 
@@ -19,4 +18,8 @@ class Task extends Model
         return $this->belongsTo(brief::class);
     }
 
+    public function apprenants()
+    {
+        return $this->belongsToMany(apprenants::class, 'apprenants_tasks', 'task_id', 'apprenant_id')->withPivot('étatTask');
+    }
 }

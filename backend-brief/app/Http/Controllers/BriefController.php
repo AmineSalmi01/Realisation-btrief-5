@@ -30,6 +30,10 @@ class BriefController extends Controller
     {
         $data = brief::find($id);
         $data->task;
+        $data->apprenant;
+        foreach($data->apprenant as $appr) {
+            $appr->tasks;
+        }
         return response()->json($data);
     }
 

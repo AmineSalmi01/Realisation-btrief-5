@@ -18,10 +18,10 @@ const TachesBrief = () => {
 
   return (
       <div>
-        {tasks.task.map((t) => {
+        {tasks.task.map((task) => {
             return (
-                <div key={t.id}>
-                    <h1>task: {t.name_task}</h1>
+                <div key={task.id}>
+                    <h1>task: {task.name_task}</h1>
                 </div>
             );
         })}

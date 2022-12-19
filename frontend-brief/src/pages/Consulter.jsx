@@ -22,8 +22,7 @@ const Consulter = () => {
                 <div className='flex'>
                     <span> Apprenants : </span><h1>{item.prenom} {item.nom}</h1>
                 </div>
-                <span>{ item.tasks.filter((task) => task.pivot.étatTask == 1).length }</span>
-                
+                <span>{ (item.tasks.filter((task) => task.pivot.etat_Task == 1).length / item.tasks.length) * 100 }%</span>
             </div>
         )}
     </div>

@@ -20,6 +20,6 @@ class Task extends Model
 
     public function apprenants()
     {
-        return $this->belongsToMany(apprenants::class, 'apprenants_tasks', 'task_id', 'apprenant_id')->withPivot('étatTask');
+        return $this->belongsToMany(apprenants::class, 'apprenants_tasks', 'apprenant_id', 'task_id')->withPivot('etat-Task');
     }
 }

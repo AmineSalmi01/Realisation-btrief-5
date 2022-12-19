@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('apprenants_tasks', function (Blueprint $table) {
-            $table->dropColumn('étatTask');
+            $table->dropColumn('etatTask');
             $table->integer('etat_Task')->default(0);
         });
     }

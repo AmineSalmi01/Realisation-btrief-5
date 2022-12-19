@@ -20,7 +20,7 @@ class Apprenant extends Model
 
     public function tasks()
     {
-        return $this->belongsToMany(Task::class, 'apprenants_tasks', 'task_id', 'apprenant_id')->withPivot('étatTask');
+        return $this->belongsToMany(Task::class, 'apprenants_tasks', 'apprenant_id', 'task_id')->withPivot('etat_Task');
 
     }
 

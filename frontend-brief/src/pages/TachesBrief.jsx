@@ -17,11 +17,13 @@ const TachesBrief = () => {
       }, [])
 
   return (
-      <div>
+      <div className='flex py-7 px-14 sm:flex-row sm:space-x-6 sm:space-y-0'>
         {tasks.task.map((task) => {
             return (
-                <div key={task.id}>
-                    <h1>task: {task.name_task}</h1>
+                <div key={task.id} className='bg-white w-full p-7 rounded-3xl border-2 duration-300 hover:scale-105 hover:shadow-xl cursor-pointer'>
+                    <h1 className='font-bold'>Name Task : {task.name_task}</h1>
+                    <h3>Date Start : {task.start_task}</h3>
+                    <h3>Date end : {task.end_task}</h3>
                 </div>
             );
         })}

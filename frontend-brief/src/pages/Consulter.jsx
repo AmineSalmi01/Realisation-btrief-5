@@ -16,13 +16,13 @@ const Consulter = () => {
     }, [])
 
   return (
-    <div>
+    <div className='flex py-7 px-14 sm:flex-row sm:space-x-6 sm:space-y-0'>
         {consulter.apprenant.map((item) => 
-            <div key={item.id}>
+            <div key={item.id} className='bg-white p-7 rounded-3xl border-2 duration-300 hover:scale-105 hover:shadow-xl cursor-pointer'>
                 <div className='flex'>
-                    <span> Apprenants : </span><h1>{item.prenom} {item.nom}</h1>
+                    <span>Nom Apprenants : </span><h1 className='font-semibold'>{item.prenom} {item.nom}</h1>
                 </div>
-                <span>{ (item.tasks.filter((task) => task.pivot.etat_Task == 1).length / item.tasks.length) * 100 }%</span>
+                <span className=''>Etat d'avancement : { (item.tasks.filter((task) => task.pivot.etat_Task == 1).length / item.tasks.length) * 100 }%</span>
             </div>
         )}
     </div>

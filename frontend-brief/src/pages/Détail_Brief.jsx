@@ -16,7 +16,7 @@ const Detail_Brief = () => {
         for (let i = 0; i < apiBrief.data.task.length; i++){
           if(apiBrief.data.task[i].état == 1){
             completedTask++;
-          }
+          } 
           setProgressBrief((completedTask / apiBrief.data.task.length) * 100)
         }
       }
@@ -50,9 +50,21 @@ const Detail_Brief = () => {
       </div>
       <div className='ml-80 mt-8'>
           <div className='flex justify-between bg-white p-7 rounded-3xl border-2'>
-              <h1  className='font-bold'>Etat d'avancement de la brief </h1> <span>{progressBrief}%</span>
+              <h1  className='font-bold'>Etat d'avancement de la brief :</h1>
+              <div style={{
+                width:'200px',
+                height:'30px',
+                backgroundColor:'gray'                
+              }}>
+                <div style={{width:progressBrief + '%', height:"30px",backgroundColor:'#FF7A00'}}>
+                      <span className='text-white'> {progressBrief}% </span>
+                  </div>
+              </div>
+               
           </div>
       </div>
+
+
     </>
     
   )

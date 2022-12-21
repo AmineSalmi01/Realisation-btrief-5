@@ -18,12 +18,13 @@ const  Brief = () => {
           {briefs.map((brief) => {
             return (
 
-              <Link key={brief.id} to={'/Détail_Brief/' + brief.id}>
-                <div
+              
+                <div key={brief.id}
                 className='w-80 display max-w-sm overflow-hidden 
                 rounded-3xl bg-white duration-300 hover:scale-105 hover:shadow-xl'>
-                  <img src={ img_brief } className='w-full'/>
-
+                  <Link  to={'/Détail_Brief/' + brief.id}>
+                    <img src={ img_brief } className='w-full'/>
+                </Link>
                   <h1 className=' my-2 text-xl font-semibold mx-6'>{brief.name_brief}</h1>
                   <h3 className='text-justify text-gray-500 text-xs mx-6'> {brief.descrip} </h3>
                   <div className=' mx-8 px-4 py-4 text-center flex space-x-4'>
@@ -36,7 +37,7 @@ const  Brief = () => {
                     
                   </div>
                 </div>
-              </Link>
+              
 
             ); 
           })}
